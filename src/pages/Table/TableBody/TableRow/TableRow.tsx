@@ -1,5 +1,4 @@
 import React from 'react';
-import './tableRow.module.scss';
 import {IUser} from '../../../../type/type';
 import {TriggersTooltips} from '../../../../ui/Popap/Button';
 import {useDispatch} from 'react-redux';
