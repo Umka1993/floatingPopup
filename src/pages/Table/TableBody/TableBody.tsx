@@ -14,7 +14,7 @@ export const TableBody = () => {
       value: 'ФИО студента',
     },
     {
-      value: 'Системный подход к ',
+      value: 'Системный подход к',
     },
     {
       value: date,
