@@ -2,7 +2,7 @@ import React, {ReactNode} from 'react';
 
 export const Layout = ({children}:{children: ReactNode}) => {
   return (
-    <div >
+    <div className='container' >
       {children}
     </div>
   );
