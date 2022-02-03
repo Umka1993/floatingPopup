@@ -3,15 +3,17 @@ import s from './popup.module.scss';
 import {useAppSelector} from '../../core/redux/hooks/redux';
 import {IUser} from '../../type/type';
 
-export const Popup = () => {
-  const {rowsValue, userId, date} =useAppSelector((state) => state.users);
+export const Popup = ({handleTooltipClose}:{handleTooltipClose:()=>void}) => {
+  const {rowsValue, userId, date, userNames} =useAppSelector((state) => state.users);
   const [user, setUser] = useState<IUser>();
-
+  const [userName, setUserName] = useState<string>();
 
   useEffect( ()=>{
-    if (rowsValue && userId) {
-      const selectedUser = rowsValue.find((i)=>i.id===`${userId}`);
-      setUser(selectedUser);
+    if (rowsValue && userId && userNames) {
+      const selectedData = rowsValue.find((i)=>i.id===`${userId}`);
+      const selectedUserName = userNames.find((i)=>i.id===`${userId}`);
+      setUser(selectedData);
+      setUserName(selectedUserName?.name);
     }
   }, [userId]);
   return (
@@ -19,7 +21,7 @@ export const Popup = () => {
       <h2>Поставить Отметку</h2>
       <div className={s.row}>
         <p >Студент</p>
-        <p >{user?.name}</p>
+        <p >{userName}</p>
       </div>
       <div className={s.row}>
         <p >Дата</p>
@@ -33,7 +35,7 @@ export const Popup = () => {
       <input type="text" value={user?.absent}
       />
 
-      <button>Поставить отметку</button>
+      <button onClick={()=>handleTooltipClose}>Поставить отметку</button>
 
     </div>
   );

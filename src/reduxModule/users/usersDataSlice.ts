@@ -1,65 +1,158 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 const initialState ={
-  rowsValue: [
+  modalOpen: '',
+  userNames: [
     {
       id: '1',
       name: 'Васильева Анна',
-      note: 'H',
-      dateValue: 'H',
-      noteAnalitic: '5',
-      absent: '5',
-      balls: '105',
-      finalGrade: '105',
     },
     {
       id: '2',
       name: 'Сергеев Сергей',
-      note: 'H',
-      dateValue: 'H',
-      noteAnalitic: '5',
-      absent: '5',
-      balls: '105',
-      finalGrade: '105',
-    }, {
+    },
+    {
       id: '3',
       name: 'Иванов Иван',
-      note: 'H',
-      dateValue: 'H',
-      noteAnalitic: '5',
-      absent: '5',
-      balls: '105',
-      finalGrade: '105',
     },
     {
       id: '4',
       name: 'Данилов Даниил',
-      note: 'H',
-      dateValue: 'H',
-      noteAnalitic: '5',
-      absent: '5',
-      balls: '105',
-      finalGrade: '105',
     },
     {
       id: '5',
       name: 'Петров Петр',
-      note: 'H',
-      dateValue: 'H',
-      noteAnalitic: '5',
-      absent: '5',
-      balls: '105',
-      finalGrade: '105',
     },
     {
       id: '6',
       name: 'Алейникова Вероника',
+    },
+  ],
+  rowsValue: [
+    {
+
+      id: '1',
       note: 'H',
       dateValue: 'H',
       noteAnalitic: '5',
       absent: '5',
       balls: '105',
       finalGrade: '105',
+      year: '25',
+      city: 'Moskow',
+      color: 'black',
+      size: 'L',
+      address: 'Street',
+      street: 'Kulas Light',
+      suite: 'Apt. 556',
+      zipcode: '92998-3874',
+      phone: '1-770-736-8031 x56442',
+      website: 'hildegard.org',
+
+    },
+    {
+
+      id: '2',
+      note: 'H',
+      dateValue: 'H',
+      noteAnalitic: '5',
+      absent: '5',
+      balls: '105',
+      finalGrade: '105',
+      year: '25',
+      city: 'Moskow',
+      color: 'black',
+      size: 'L',
+      address: 'Street',
+      street: 'Kulas Light',
+      suite: 'Apt. 556',
+      zipcode: '92998-3874',
+      phone: '1-770-736-8031 x56442',
+      website: 'hildegard.org',
+
+    }, {
+
+      id: '3',
+      note: 'H',
+      dateValue: 'H',
+      noteAnalitic: '5',
+      absent: '5',
+      balls: '105',
+      finalGrade: '105',
+      year: '25',
+      city: 'Moskow',
+      color: 'black',
+      size: 'L',
+      address: 'Street',
+      street: 'Kulas Light',
+      suite: 'Apt. 556',
+      zipcode: '92998-3874',
+      phone: '1-770-736-8031 x56442',
+      website: 'hildegard.org',
+
+    },
+    {
+
+      id: '4',
+      note: 'H',
+      dateValue: 'H',
+      noteAnalitic: '5',
+      absent: '5',
+      balls: '105',
+      finalGrade: '105',
+      year: '25',
+      city: 'Moskow',
+      color: 'black',
+      size: 'L',
+      address: 'Street',
+      street: 'Kulas Light',
+      suite: 'Apt. 556',
+      zipcode: '92998-3874',
+      phone: '1-770-736-8031 x56442',
+      website: 'hildegard.org',
+
+    },
+    {
+
+      id: '5',
+      note: 'H',
+      dateValue: 'H',
+      noteAnalitic: '5',
+      absent: '5',
+      balls: '105',
+      finalGrade: '105',
+      year: '25',
+      city: 'Moskow',
+      color: 'black',
+      size: 'L',
+      address: 'Street',
+      street: 'Kulas Light',
+      suite: 'Apt. 556',
+      zipcode: '92998-3874',
+      phone: '1-770-736-8031 x56442',
+      website: 'hildegard.org',
+
+    },
+    {
+
+      id: '6',
+      note: 'H',
+      dateValue: 'H',
+      noteAnalitic: '5',
+      absent: '5',
+      balls: '105',
+      finalGrade: '105',
+      year: '25',
+      city: 'Moskow',
+      color: 'black',
+      size: 'L',
+      address: 'Street',
+      street: 'Kulas Light',
+      suite: 'Apt. 556',
+      zipcode: '92998-3874',
+      phone: '1-770-736-8031 x56442',
+      website: 'hildegard.org',
+
     },
   ],
   userId: '',
@@ -74,10 +167,14 @@ const UsersSlice = createSlice({
     setUserId(state, {payload}) {
       state.userId = payload;
     },
+    setModalOpen(state, {payload}) {
+      state.modalOpen = payload;
+    },
   },
 });
 
 export const userSlice = UsersSlice.reducer;
 export const {
   setUserId,
+  setModalOpen,
 } = UsersSlice.actions;
