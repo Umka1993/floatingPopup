@@ -3,10 +3,11 @@ import s from './popup.module.scss';
 import {useAppSelector} from '../../core/redux/hooks/redux';
 import {IUser} from '../../type/type';
 
-export const Popup = ({handleTooltipClose}:{handleTooltipClose:()=>void}) => {
+export const Popup = ({modalClose}:{modalClose:()=>void }) => {
   const {rowsValue, userId, date, userNames} =useAppSelector((state) => state.users);
   const [user, setUser] = useState<IUser>();
   const [userName, setUserName] = useState<string>();
+
 
   useEffect( ()=>{
     if (rowsValue && userId && userNames) {
@@ -16,6 +17,8 @@ export const Popup = ({handleTooltipClose}:{handleTooltipClose:()=>void}) => {
       setUserName(selectedUserName?.name);
     }
   }, [userId]);
+
+
   return (
     <div className={s.block}>
       <h2>Поставить Отметку</h2>
@@ -32,10 +35,12 @@ export const Popup = ({handleTooltipClose}:{handleTooltipClose:()=>void}) => {
                 Не присутствовал
       </label>
 
-      <input type="text" value={user?.absent}
+      <input className={s.textInput} type="text" value={user?.absent}
       />
 
-      <button onClick={()=>handleTooltipClose}>Поставить отметку</button>
+      <div className={s.button}>
+        <button onClick={modalClose}>Поставить отметку</button>
+      </div>
 
     </div>
   );

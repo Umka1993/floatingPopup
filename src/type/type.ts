@@ -11,5 +11,4 @@ export interface IUser{
     zipcode: string
     phone: string
     website: string
-    setSelectedId?: (arg: string)=>void
 }

@@ -24,22 +24,10 @@ h5 {
   margin: 0 auto;
   width: 90%;
   max-width: 1440px;
+  //border: 1px solid red;
 
 }
 
-button {
-  &:hover {
-    background: var(--light-red);
-  }
-
-  &:active {
-    background: var(--darkRed);
-  }
-
-  &:disabled {
-    background: var(--lightest1-grey);
-  }
-}
 
 ul {
   margin-block-start: 0;
@@ -61,27 +49,26 @@ td {
   color: black;
   text-align: center;
   width: 3%;
-  &:focus {
-    //box-shadow: 0px 0px 100vw 100vw rgba(0, 0, 0, 0.2);
-    table {
-      box-shadow: 0px 0px 100vw 100vw rgba(0, 0, 0, 0.2);
-    }
-
-  }
+  padding: 0;
 
   .MuiGrid-item{
     .MuiTooltip-popper{
-      width: 500px;
+      width: 704px;
       .tooltipe{
         background-color: white;
         color: black;
         max-width: 100%;
         padding: 30px 15px;
-        box-shadow: -1px 1px 8px 10px rgba(0, 0, 0, 0.25);
+        //box-shadow: -1px 1px 8px 10px rgba(0, 0, 0, 0.25);
         margin-left: 10px;
         margin-right: 9px;
-        //box-shadow: 0px 0px 100vw 100vw rgba(0, 0, 0, 0.2);
-
+        box-shadow: 0px 0px 100vw 100vw rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        .arrow {
+          &:before {
+            background-color: white;
+          }
+        }
       }
     }
   }
@@ -90,7 +77,6 @@ td {
     .MuiButton-root{
       width: 100%;
       padding: 0;
-
       td{
         border: none;
         width: 100%;
@@ -99,29 +85,13 @@ td {
     }
   }
 
-
-
-  .arrow {
-    color: white;
-  }
-  &:nth-child(1){
-    //max-width: 10px;
-    height: 30px;
-    button{
-      min-width: 0;
-    }
-  }
-  &:nth-child(2){
-    width: 10%;
-    text-align: center;
-  }
-  &:nth-child(3){
-    width: 5%;
-  }
 }
-.shadow {
+
+
+
+button[aria-labelledby='shadow'] {
   box-shadow: 0px 0px 100vw 100vw rgba(0, 0, 0, 0.2);
-}
-.modal{
-  border: 1px solid red;
+  border-radius: 0;
+  //background-color: red;
+  padding: 0;
 }

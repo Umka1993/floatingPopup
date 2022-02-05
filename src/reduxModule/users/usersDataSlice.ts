@@ -1,7 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 const initialState ={
-  modalOpen: '',
   userNames: [
     {
       id: '1',
@@ -167,14 +166,10 @@ const UsersSlice = createSlice({
     setUserId(state, {payload}) {
       state.userId = payload;
     },
-    setModalOpen(state, {payload}) {
-      state.modalOpen = payload;
-    },
   },
 });
 
 export const userSlice = UsersSlice.reducer;
 export const {
   setUserId,
-  setModalOpen,
 } = UsersSlice.actions;

@@ -1,7 +1,8 @@
 import React from 'react';
 import {IUser} from '../../../../type/type';
 import {TriggersTooltips} from '../../../../ui/Tooltip/Tooltip';
-import {useAppSelector} from '../../../../core/redux/hooks/redux';
+import {useDispatch} from 'react-redux';
+import {setUserId} from '../../../../reduxModule/users/usersDataSlice';
 
 
 export const TableRow = ({id, noteAnalitic, note, dateValue, balls, finalGrade, absent,
@@ -10,98 +11,67 @@ export const TableRow = ({id, noteAnalitic, note, dateValue, balls, finalGrade, 
   zipcode,
   phone,
   website,
-  setSelectedId,
 }:IUser):JSX.Element => {
-  const {modalOpen}= useAppSelector((state) => state.users);
+  const dispatch = useDispatch();
 
+  const setUserData = (id:string)=>{
+    dispatch(setUserId(id));
+  };
 
   return (
     <>
       <tr>
-        <td id={`${id}noteAnalitic`}
-          className={modalOpen === `${id}noteAnalitic` ? 'shadow' : undefined}
-          onClick={ ((event) => setSelectedId ? setSelectedId(event.currentTarget.id) : null)}
-        >
+        <td onClick={()=>setUserData(id)}>
           <TriggersTooltips>
             {noteAnalitic}
           </TriggersTooltips>
         </td>
-        <td id={`${id}note`}
-          className={modalOpen === `${id}note` ? 'shadow' : undefined}
-          onClick={ ((event) => setSelectedId ? setSelectedId(event.currentTarget.id) : null)}
-        >
+        <td onClick={()=>setUserData(id)}>
           <TriggersTooltips>
             {note}
           </TriggersTooltips>
         </td>
-        <td id={`${id}dateValue`}
-          className={modalOpen === `${id}dateValue` ? 'shadow' : undefined}
-          onClick={ ((event) => setSelectedId ? setSelectedId(event.currentTarget.id) : null)}
-        >
+        <td onClick={()=>setUserData(id)}>
           <TriggersTooltips>
             {dateValue}
           </TriggersTooltips>
         </td>
-        <td id={`${id}absent`}
-          className={modalOpen === `${id}absent` ? 'shadow' : undefined}
-          onClick={ ((event) => setSelectedId ? setSelectedId(event.currentTarget.id) : null)}
-        >
+        <td onClick={()=>setUserData(id)}>
           <TriggersTooltips>
             {absent}
           </TriggersTooltips>
         </td>
-        <td id={`${id}balls`}
-          className={modalOpen === `${id}balls` ? 'shadow' : undefined}
-          onClick={ ((event) => setSelectedId ? setSelectedId(event.currentTarget.id) : null)}
-        >
+        <td onClick={()=>setUserData(id)}>
           <TriggersTooltips>
             {balls}
           </TriggersTooltips>
         </td>
-        <td id={`${id}finalGrade`}
-          className={modalOpen === `${id}finalGrade` ? 'shadow' : undefined}
-          onClick={ ((event) => setSelectedId ? setSelectedId(event.currentTarget.id) : null)}
-        >
+        <td onClick={()=>setUserData(id)}>
           <TriggersTooltips>
             {finalGrade}
           </TriggersTooltips>
         </td>
-        <td id={`${id}street`}
-          className={modalOpen === `${id}street` ? 'shadow' : undefined}
-          onClick={ ((event) => setSelectedId ? setSelectedId(event.currentTarget.id) : null)}
-        >
+        <td onClick={()=>setUserData(id)}>
           <TriggersTooltips>
             {street}
           </TriggersTooltips>
         </td>
-        <td id={`${id}suite`}
-          className={modalOpen === `${id}suite` ? 'shadow' : undefined}
-          onClick={ ((event) => setSelectedId ? setSelectedId(event.currentTarget.id) : null)}
-        >
+        <td onClick={()=>setUserData(id)}>
           <TriggersTooltips>
             {suite}
           </TriggersTooltips>
         </td>
-        <td id={`${id}zipcode`}
-          className={modalOpen === `${id}zipcode` ? 'shadow' : undefined}
-          onClick={ ((event) => setSelectedId ? setSelectedId(event.currentTarget.id) : null)}
-        >
+        <td onClick={()=>setUserData(id)}>
           <TriggersTooltips>
             {zipcode}
           </TriggersTooltips>
         </td>
-        <td id={`${id}phone`}
-          className={modalOpen === `${id}phone` ? 'shadow' : undefined}
-          onClick={ ((event) => setSelectedId ? setSelectedId(event.currentTarget.id) : null)}
-        >
+        <td onClick={()=>setUserData(id)}>
           <TriggersTooltips>
             {phone}
           </TriggersTooltips>
         </td>
-        <td id={`${id}website`}
-          className={modalOpen === `${id}website` ? 'shadow' : undefined}
-          onClick={ ((event) => setSelectedId ? setSelectedId(event.currentTarget.id) : null)}
-        >
+        <td onClick={()=>setUserData(id)}>
           <TriggersTooltips>
             {website}
           </TriggersTooltips>
