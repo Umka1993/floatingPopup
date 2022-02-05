@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/floatingPopup/static/css/main.9c61d220.css",
+    "main.js": "/floatingPopup/static/js/main.d8fa9ddb.js",
+    "index.html": "/floatingPopup/index.html",
+    "main.9c61d220.css.map": "/floatingPopup/static/css/main.9c61d220.css.map",
+    "main.d8fa9ddb.js.map": "/floatingPopup/static/js/main.d8fa9ddb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9c61d220.css",
+    "static/js/main.d8fa9ddb.js"
+  ]
+}
